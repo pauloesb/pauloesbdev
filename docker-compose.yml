@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  client:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    command: ["npm", "run", "serve"]
+    volumes:
+       - ./:/app
+       - /app/node_modules
+    environment: 
+      - CHOKIDAR_USEPOLLING=true
